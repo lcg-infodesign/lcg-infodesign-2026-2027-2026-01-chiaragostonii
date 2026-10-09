@@ -11,8 +11,17 @@ function drawFrog(){
   push();
 
 //corpo
-  fill(255, 255, 255);
+  fill(60, 255, 20);
   triangle(xfrog-190, yfrog+310, xfrog-90, yfrog+110, xfrog-62, yfrog+220);
+
+    fill(0, 0, 0);
+  triangle(xfrog-190, yfrog+310, xfrog-67, yfrog+225, xfrog+180, yfrog+300);
+
+      fill(255, 255, 255);
+  triangle(xfrog+70, yfrog+240, xfrog-67, yfrog+225, xfrog+180, yfrog+300);
+
+        fill(250, 0, 0);
+  triangle( xfrog+70, yfrog+240, xfrog+90, yfrog+175, xfrog+180, yfrog+300);
 
   fill(170, 0, 0);
   triangle(xfrog+60, yfrog+90, xfrog+120, yfrog+100, xfrog+70, yfrog+240);
@@ -22,9 +31,6 @@ function drawFrog(){
   
   fill(220, 255, 220);
   triangle( xfrog-140, yfrog+95, xfrog-75, yfrog+130, xfrog+70, yfrog+90);
-
-  //       fill(250, 0, 0);
-  // triangle( xfrog-200, yfrog+250, xfrog-105, yfrog+145, xfrog-110, yfrog+225);
 
     fill(0, 165, 30);
   triangle( xfrog-140, yfrog+95, xfrog-75, yfrog+130, xfrog+-70, yfrog+200);
