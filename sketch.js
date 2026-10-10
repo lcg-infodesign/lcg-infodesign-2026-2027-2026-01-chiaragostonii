@@ -11,50 +11,68 @@ function drawFrog(){
   push();
 
 //corpo
-  fill(33, 82, 114); // azz scuro
+  fill(87, 146, 185); // azz medio/chiaro
   triangle(xfrog-190, yfrog+300, xfrog-120, yfrog+210, xfrog-90, yfrog+300);
   
-  fill(123, 168, 202); // azz chiaro
+  fill(42, 103, 141); // azz medio/scuro
   triangle(xfrog-190, yfrog+300, xfrog-105, yfrog+255, xfrog-90, yfrog+300);
 
-  fill(234, 230, 202); //panna medio
+    fill(245, 245, 220); //panna chiaro
   triangle(xfrog-45, yfrog+320, xfrog+20, yfrog+260, xfrog-90, yfrog+200);
   
   fill(51, 123, 168); // azz medio
   triangle(xfrog-50, yfrog+300, xfrog-120, yfrog+210, xfrog-90, yfrog+300);
 
-  fill(245, 245, 220); //panna chiaro
+    fill(223, 217, 194); //panna medio
   triangle(xfrog-54, yfrog+295, xfrog-90, yfrog+200, xfrog-150, yfrog+170);
 
-    fill(234, 230, 202); //panna medio
+    fill(223, 217, 194); //panna medio
   triangle(xfrog-12, yfrog+300, xfrog+60, yfrog+300, xfrog+80, yfrog+180);
   
-  fill(245, 245, 220); //panna chiaro
+  fill(234, 230, 202); //panna chiaro
   triangle(xfrog-25, yfrog+300, xfrog+15, yfrog+300, xfrog+20, yfrog+260);
 
-    fill(189, 175, 167); //panna scuro
+    fill(212, 203, 185); //panna scuro
   triangle(xfrog-90, yfrog+200, xfrog+60, yfrog+120, xfrog+20, yfrog+260);
 
       fill(234, 230, 202); //panna medio
-  triangle(xfrog-90, yfrog+200, xfrog+60, yfrog+120, xfrog-150, yfrog+170)
+  triangle(xfrog-90, yfrog+200, xfrog+60, yfrog+120, xfrog-150, yfrog+170);
 
       fill(245, 245, 220); //panna chiaro
   triangle(xfrog+140, yfrog+100, xfrog+60, yfrog+120, xfrog+20, yfrog+260);
 
 //testa
   fill(123, 168, 202); // azz chiaro
-  triangle(xfrog, yfrog+80, xfrog+60, yfrog+120, xfrog-50, yfrog+145)
+  triangle(xfrog, yfrog+80, xfrog+60, yfrog+120, xfrog-50, yfrog+145);
 
     fill(51, 123, 168); // azz medio
-  triangle(xfrog, yfrog+80, xfrog-95, yfrog+75, xfrog-50, yfrog+145)
+  triangle(xfrog, yfrog+80, xfrog-95, yfrog+75, xfrog-50, yfrog+145);
   
   fill(33, 82, 114); // azz scuro
-  triangle(xfrog-155, yfrog+160, xfrog-95, yfrog+75, xfrog-50, yfrog+145)
+  triangle(xfrog-155, yfrog+160, xfrog-95, yfrog+75, xfrog-50, yfrog+145);
     fill(33, 82, 114); // azz scuro
-  triangle(xfrog-155, yfrog+160, xfrog-150, yfrog+170, xfrog-50, yfrog+145)
+  triangle(xfrog-155, yfrog+160, xfrog-150, yfrog+170, xfrog-50, yfrog+145);
+
+  fill(42, 103, 141); // azz medio/scuro
+  triangle(xfrog-155, yfrog+160, xfrog-95, yfrog+75, xfrog-170, yfrog+100);
 
       fill(51, 123, 168); // azz medio
-  triangle(xfrog-155, yfrog+160, xfrog-95, yfrog+75, xfrog-170, yfrog+100)
+  triangle(xfrog, yfrog+80, xfrog+60, yfrog+120, xfrog+35, yfrog-10);
+  
+  fill(87, 146, 185); // azz medio/chiaro
+  triangle(xfrog, yfrog+80, xfrog-95, yfrog+75, xfrog-120, yfrog+35);
+
+   fill(123, 168, 202); // azz chiaro
+  triangle(xfrog, yfrog+80, xfrog-50, yfrog+61, xfrog+35, yfrog-10);
+
+  fill(87, 146, 185); // azz medio/chiaro
+  triangle(xfrog+60, yfrog+120, xfrog+41, yfrog+20, xfrog+140, yfrog+100);
+
+      fill(33, 82, 114); // azz scuro
+  triangle(xfrog+80, yfrog-30, xfrog+41, yfrog+20, xfrog+35, yfrog-10);
+
+  fill(42, 103, 141); // azz medio/scuro
+  triangle(xfrog+140, yfrog+100, xfrog+60, yfrog+40, xfrog+110, yfrog+50);
 
 
 
@@ -83,24 +101,24 @@ function drawFrog(){
 
 //occhi
 //occhio sx
-  // fill(0,130,55);
-  // ellipse(xfrog+65, yfrog-20, 90, 90);
+  fill(235,155,55);
+  ellipse(xfrog+85, yfrog+10, 100, 100);
 
   // fill(255,213,33);
   // ellipse(xfrog+60, yfrog-15, 80, 80);
 
-  //   fill(0);
-  // ellipse(xfrog+50, yfrog-10, 50, 50);
+    fill(0);
+  ellipse(xfrog+90, yfrog+20, 50, 50);
 
   // occhio dx
-  // fill(0,130,55);
-  // ellipse(xfrog-140, yfrog+65, 90, 90);
+  fill(235,155,55);
+  ellipse(xfrog-140, yfrog+65, 100, 100);
 
   // fill(255,213,33);
   // ellipse(xfrog-120, yfrog+15, 80, 80);
 
-  //     fill(0);
-  // ellipse(xfrog-130, yfrog+75, 50, 50);
+      fill(0);
+  ellipse(xfrog-130, yfrog+75, 50, 50);
 
 //naso
   //     fill(255);
@@ -132,7 +150,6 @@ background(30, 50, 44);
     drawFrog();
   
 }
-
 
 
 
