@@ -2,6 +2,8 @@ let xMax = 400
 let yMax = 600
 let xfrog = xMax/2
 let yfrog = yMax*0.5
+let xMosca = xMax/4
+let yMosca = yMax/4
 
 // function preload() {
 //   // put preload code here
@@ -152,6 +154,27 @@ function drawFrog(){
   
 }
 
+function drawMosca(){
+  push();
+  //corpo
+  fill(116, 19, 139);
+  ellipse(xMosca, yMosca, 80, 40);
+
+  //occhi
+  fill(35, 0, 41);
+  ellipse(xMosca-35, yMosca-5, 15, 20);
+  //ali
+  fill(91, 255, 255, 150);
+  ellipse(xMosca-5, yMosca-25, 20, 40);
+  fill(255, 255, 255, 120);
+  ellipse(xMosca, yMosca-25, 20, 40);
+
+  //cambiare i colori
+
+  pop();
+
+}
+
 
 
 function setup() {
@@ -166,12 +189,13 @@ function setup() {
   frameRate(30);
   background(30, 50, 44);
   drawBubbles(10)
+  angleMode(DEGREES);
 }
 
 function draw() {
 
   drawFrog();
- 
+  drawMosca();
 
 
 }
