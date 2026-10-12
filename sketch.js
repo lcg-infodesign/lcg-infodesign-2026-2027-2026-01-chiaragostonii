@@ -6,6 +6,11 @@ let xMosca = xMax + 50
 let yMosca = yMax/4
 let velMosca = 2 //velocità mosca
 
+// animazione occhi
+let xOcchioSx = xfrog+100;
+let xOcchioDx = xfrog-125;
+let velOcchi = velMosca * 35 / 490; // velocità occhi
+
 // function preload() {
 //   // put preload code here
 // }
@@ -147,28 +152,35 @@ function drawFrog(){
   fill(235,155,55);
   ellipse(xfrog+85, yfrog+10, 100, 100);
 
-  // fill(255,213,33);
-  // ellipse(xfrog+60, yfrog-15, 80, 80);
-
-    fill(0);
-  ellipse(xfrog+90, yfrog+20, 50, 50);
-
   // occhio dx
   fill(235,155,55);
   ellipse(xfrog-140, yfrog+65, 100, 100);
 
-  // fill(255,213,33);
-  // ellipse(xfrog-120, yfrog+15, 80, 80);
-
-      fill(0);
-  ellipse(xfrog-130, yfrog+75, 50, 50);
-
-//naso
-  //     fill(255);
-  // ellipse(xfrog-50, yfrog+50, 10, 15);
-
     pop();
   
+}
+
+function moveOcchi(){
+  let sogliaSxOcchioSX = xfrog+65;
+  let sogliaDxOcchioSX = xfrog+100;
+  let sogliaSxOcchioDX = xfrog-160;
+  let sogliaDxOcchioDX = xfrog-125;
+  fill(0);
+  // Occhio sx
+  xOcchioSx = xOcchioSx - velOcchi;
+
+  if(xOcchioSx < sogliaSxOcchioSX) {
+    xOcchioSx = sogliaDxOcchioSX;
+  }
+  ellipse(xOcchioSx, yfrog, 50, 50);
+
+  // Occhio dx
+  xOcchioDx = xOcchioDx - velOcchi;
+
+  if(xOcchioDx < sogliaSxOcchioDX) {
+    xOcchioDx = sogliaDxOcchioDX;
+  }
+  ellipse(xOcchioDx, yfrog+55, 50, 50);
 }
 
 function drawMosca(){
@@ -221,6 +233,7 @@ function draw() {
   drawMosca();
   moveMosca();
 
+  moveOcchi();
 }
 
 
