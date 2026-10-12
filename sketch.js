@@ -2,8 +2,9 @@ let xMax = 400
 let yMax = 600
 let xfrog = xMax/2
 let yfrog = yMax*0.5
-let xMosca = xMax/4
+let xMosca = xMax + 50
 let yMosca = yMax/4
+let velMosca = 2 //velocità mosca
 
 // function preload() {
 //   // put preload code here
@@ -16,7 +17,7 @@ function drawBubble(i, bubbleX, bubbleY, transparency, size){
     } else if (i%3==0){
       fill(88, 178, 150, transparency);
       ellipse(bubbleX, bubbleY, size);
-    } else if (i%4==0){
+    } else if (i%5==0){
       fill(124, 238, 137, transparency);
       ellipse(bubbleX, bubbleY, size);
     } else {
@@ -31,14 +32,30 @@ function drawBubbles(n=620){
   noStroke();
 
   for (let i=0; i < n; i++){
-    let bubbleX = (i*180) % width + (i%3)*5;
+    let bubbleX = 0;
+    if( i < 10) {
+      bubbleX = (i*180) % width + (i%3)*5;
+    } else {
+      bubbleX = (i*100) % width + (i%3)*10;
+    }
     let bubbleY = ((i*90) % height) + (1%5);
 
     let randomTransparency = random(150, 180);
-    let randomSize = random(100, 250);
 
-    drawBubble(i, bubbleX, bubbleY, randomTransparency, randomSize)
+    if(i%2==0){
+      size = 100;
+      if(i > 9){
+        size = 180} 
+    } else if (i%3==0){
+      size =  200;
+    } else if (i%5==0){
+      size = 150;
+    } else {
+      size = 125;
+    }
+    drawBubble(i, bubbleX, bubbleY, randomTransparency, size)
   }
+
   pop();
 }
 
@@ -157,25 +174,31 @@ function drawFrog(){
 function drawMosca(){
   push();
   //corpo
-  fill(116, 19, 139);
-  ellipse(xMosca, yMosca, 80, 40);
+  fill(97, 86, 126);
+  ellipse(xMosca, yMosca, 60, 40);
 
   //occhi
   fill(35, 0, 41);
-  ellipse(xMosca-35, yMosca-5, 15, 20);
+  ellipse(xMosca-30, yMosca-5, 15, 20);
   //ali
-  fill(91, 255, 255, 150);
-  ellipse(xMosca-5, yMosca-25, 20, 40);
-  fill(255, 255, 255, 120);
-  ellipse(xMosca, yMosca-25, 20, 40);
-
-  //cambiare i colori
+  fill(200, 205, 208, 120);
+  ellipse(xMosca-5, yMosca-25, 20, 30);
+  fill(222, 225, 227, 120);
+  ellipse(xMosca, yMosca-25, 20, 30);
 
   pop();
 
 }
 
+function moveMosca(){
+  xMosca = xMosca - velMosca;
+  
+  // quando la mosca esce a sinistra, la faccio ripartire da destra
+  if(xMosca < -40){ 
+    xMosca = xMax + 50;
+  }
 
+}
 
 function setup() {
   createCanvas(400, 600);
@@ -185,18 +208,18 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(16);
   text(message, width / 2, height / 2);
-  strokeWeight(0)
+  strokeWeight(0);
   frameRate(30);
-  background(30, 50, 44);
-  drawBubbles(10)
-  angleMode(DEGREES);
+
 }
 
 function draw() {
+  background(40, 41, 62);
+  drawBubbles(20);
 
   drawFrog();
   drawMosca();
-
+  moveMosca();
 
 }
 
